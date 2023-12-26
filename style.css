@@ -1,0 +1,269 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+:root {
+    font-size: 62.5%;
+
+    --color-base-white: #ffffff;
+    --color-base-blue-header: #065E7C;
+    --color-base-blue: #387E96;
+    --color-base-h1: #202024;
+    --color-base-p: #121214;
+}
+
+html, body,input{
+    font-family: 'Mulish', sans-serif;
+}
+
+body{
+    font-size: 1.6rem;
+    background-color: var(--color-base-white);
+}
+
+#page{
+    width: 43rem;
+    margin-inline: auto;
+}
+
+/* HEADER */
+
+header{
+    display: flex;
+    gap: 2.6rem;
+
+    padding: 1.2rem 2.8rem;
+
+    background-color: var(--color-base-blue-header);
+}
+
+#logo {
+    background: var(--color-base-white);
+    border-radius: 999px;
+    width: 4rem;
+    height: 4rem;
+    padding: 8px;
+
+}
+
+header form {
+    flex: 1;
+}
+
+
+.input-wrapper label {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+}
+
+.input-wrapper input {
+    padding: 1.2rem;
+    align-items: center;
+    width: 100%;
+  
+    background-color: var(--color-base-blue);
+    border: 0;
+    border-radius: 0.6rem;
+  
+    font-weight: 600;
+    color: var(--color-base-white);
+}
+
+.input-wrapper input::placeholder{
+    color: var(--color-base-white);
+}
+
+#avatar{
+    width: 4.2rem;
+    height: 4.2rem;
+    border-radius: 999px;
+}
+
+/* MAIN */
+
+#first-img{
+    width: 100%;
+    height: 22rem;
+    object-fit: cover;
+}
+
+#content{
+    padding: 3.4rem 2.2rem;
+}
+
+h1{
+    font-size: 2.4rem;
+    font-weight: 700; 
+    line-height: 160%; 
+    color: var(--color-base-h1);
+}
+
+.like{
+    display: flex;
+    gap: 1.2rem;
+    margin-bottom: 3.1rem;
+    margin-top: 0.8rem;
+}
+
+.like img{
+    background-color: var(--color-base-blue);
+    border-radius: 999px;
+    padding: 1.2rem;
+}
+
+.like img:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+p{
+    font-weight: 400;
+    line-height: 160%;
+    color: var(--color-base-p)
+}
+
+/* SIDEBAR */ 
+
+section{
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+}
+
+.item{
+    display: flex;
+    gap: 1.6rem;
+
+}
+.item img:hover {
+    filter: hue-rotate(7deg) contrast(101%) saturate(200%);
+    transform: scale(1.1) rotate(-2deg);
+  }
+
+  .item{
+    --delay: .4s;
+    animation: appear .4s var(--delay) backwards;
+  }
+
+  @keyframes appear{
+    0%{
+      opacity: 0;
+      transform: scale(0.7);
+    }
+
+    50%{
+      transform: scale(1.2);
+    }
+  }
+
+aside img{ 
+    width: 15.1rem;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.details{
+    width: 215px;
+    height: 82.25px;    
+}
+
+h2{
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 160%;
+}
+
+aside p{
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 160%;
+}
+
+aside{
+    padding-left: 2.2rem ;
+    padding-right: 2.6rem ;
+    padding-bottom: 3.4rem;
+}
+
+/* FOOTER */ 
+
+footer{
+    text-align: center;
+    font-weight: 600;
+    background-color: var(--color-base-blue);
+    color: var(--color-base-white);
+    padding: 1.6rem;
+
+}
+
+
+
+@media (min-width: 1024px){
+    
+    #page{
+        width: 100%;
+        display: grid;
+        grid-template-areas:
+            "header header header"
+            "main main aside"
+            "footer footer footer";
+    }
+
+    #page header {
+        grid-area: header;
+    }
+
+    #page main {
+        grid-area: main;
+    }
+
+    #page aside {
+        grid-area: aside;
+    }
+
+    #page footer {
+        grid-area: footer;
+    }
+
+    header{
+        padding: 1.2rem 11.2rem;
+    }
+
+    main, aside{
+        margin-top: 4.4rem;
+    }
+
+    main{
+        margin-left: 10.9rem;
+        padding-right: 3.4rem;
+    }
+
+    aside{
+        margin-right: auto;
+    }
+
+    #first-img{
+        width: 100%;
+        height: 40.5rem;
+        object-fit: cover;
+    }
+
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        
+    }
+
+    #content{
+        width: 80rem;
+        padding-left: 0;
+    }
+}
